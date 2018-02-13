@@ -1,0 +1,1090 @@
+<!DOCTYPE html>
+<!-- ============================================================
+	=============================================================
+	===============	� 2016 - 2017. All Rights Reserved	===============
+	==================	WebTool 2.1 by Benz Rodrigo	================
+	=============================================================
+	================	ZOOM: benzrodrigo@gmail.com	================
+	============	YAMMER: P6406642@partners.ext.hp.com	===========
+	=============================================================
+	============================================================= -->
+<html lang="en">
+<head>
+	<meta content="IE=edge" http-equiv="X-UA-Compatible">
+    <meta name="author" content="Benz Rodrigo">
+    <meta name="viewport" content="width=device-width; initial-scale=1.0; maximum-scale=1.0; user-scalable=0;" >
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <title>WebTool 3.0</title>
+    <link rel="shortcut icon" href="/wcsstore/HPStorefrontAssetStore/images/favicon.ico" mce_href="/wcsstore/HPStorefrontAssetStore/images/favicon.ico" type="image/x-icon" />
+    
+<style type="text/css">
+html {
+      min-width:30%;
+      min-height:30%;
+      max-width:50%
+      max-height:100%;
+      overflow:hidden;
+      }
+body {font-family: "Lato", sans-serif;}
+
+/* TABS MENU */
+div.tab {
+    overflow: hidden;
+    border-radius:5px; border: 1px solid #FFFFFF;
+    background-color: #0039A8;
+    width:400px;
+}
+	/* Style the buttons inside the tab */
+	div.tab button {
+	   font-size: 11px; color: #ffffff;
+	   width:120px; float:left;
+	   padding: 11px 11px;
+    	background-color: inherit;
+    	border: 0px solid #ffffff;
+    	outline: none; cursor: pointer;
+    	transition: 0.2s;
+    }
+	/* Change background color of buttons on hover */
+	div.tab button:hover {
+   	 background-color: #1a66ff;
+   }
+	/* Create an active/current tablink class */
+	div.tab button.active {
+    	background-color: #00256D; font-size:11px;
+    }
+	/* Style the tab content */
+	.tabcontent {
+		display: none; max-width:400px;
+		padding:10px 1px;
+		border:0px solid #ccc; border-top: none;
+		-webkit-animation: fadeEffect 1s; animation: fadeEffect 1s;
+		}
+	/* Fade in tabs */
+	@-webkit-keyframes fadeEffect {
+		from {opacity: 0;} to {opacity: 1;}
+		}
+	@keyframes fadeEffect {
+		from {opacity: 0;} to {opacity: 1;}
+		}
+		
+/* FOOTER */
+	.footer {
+		position:fixed; left:0; bottom:0;
+		text-align:center; width:390px;
+		font-size:10px; font-color:#cccccc; background: #f2f2f2;
+		padding:5px; border-radius:2px;
+		margin: 0px 0px 1px 0px;
+		}
+        
+/* BUTTONS */
+	/* Style for Reset Button **/
+    input[type="reset"] {
+        font-size:11px; font-style:bold; font-family:"Arial"; color:white;
+		border-radius: 5px; border:none; background-color:#009806;
+		height:23px; width:100px; margin:1px; float:right;
+		padding: 5px 5px; cursor:pointer;
+		}
+    /* Style for Reset Button on Hover */
+    input[type="reset"]:hover {
+        background-color: #009806; color:black;
+     }
+	/* Style for Calculator Button */
+    input[type="button"] {
+        font-style:bold; font-size:11px; color:white;
+        border-radius: 5px; border:0px solid #ccc; background-color:#0d0d0d;
+        height: 23px; width:100px; padding: 5px 5px;
+        margin: 1px; float:right; cursor:pointer;
+        }
+
+/** Style for Phone Directory **/
+    fieldset[type="text"] {
+      max-width: 370px; background-color: #f2f2f2;
+      border: 2px solid #050094; border-radius: 5px;
+    }
+    legend[type="text"] {
+      font-size:11px; font-family:"Arial";
+    }
+    label[type="text"] {
+      font-style:bold; font-size:11px; color:#FFFFFF;
+      border-radius: 4px; background-color:#0085cc;
+      padding: 6px 15px 15px 15px; margin: 10px 1px 5px 1px;
+    }
+    input[type="list"] {
+      font-size: 11px; background-color:#FFFFFF;
+      border:2px solid #191919; border-radius: 3px;
+      height:19px; width:350px;
+      padding: 2px 5px 1px 5px;
+      margin: 0px 0px 5px 1px;
+      -webkit-transition: 0.3s; transition: 0.3s; outline:none;
+    }
+  	  input[type="list"]:focus {
+    	  border: 2px solid #ccc;
+      	}
+      
+/** Style for Toggle Webpad **/
+    .webpad {
+        max-width:375px;
+        }
+	select[type="showSelect"] {
+		font-size:11px; text-align:center; width:100px;
+		padding: 4px 4px; margin: 2px 1px 2px 1px;
+		border: 1px solid #050094; border-radius: 4px;
+    	display: inline-block; box-sizing: border-box;
+        }
+
+/** Style for Calculator **/
+	input[type="number"], select[type="number"] {
+		font-size:12px; text-align:right;
+		width:90px;
+		padding:3px 6px;
+		border: 1px solid #555;
+		border-radius:3px;
+		-webkit-transition: 0.5s;
+		transition: 0.5s;
+		outline:none; display: inline-block;
+		background-color:#FFFFFF;
+		}
+		input[type="number"]:focus {
+		border:1px solid #ccc; font-size:12px;
+		}
+	input[type="numb"] {
+		font-size:14px; text-align:right;
+		font-family:"Courier New";
+		width:100px;
+		padding:3px;
+		border: 0px solid #555;
+		border-radius:2px;
+		-webkit-transition: 0.5s;
+		transition: 0.5s;
+		outline:none;
+		display: inline-block;
+		background-color:#f2f2f2;
+		}
+	table {
+	  font-size:12px; width:370px;
+		border:0px;
+	}
+
+/** Style for Trackpad **/
+    textarea {
+      margin-top:5px;
+      font-size:11px;
+      font-family:"Arial";
+      border:1px solid #ccc;
+    }
+  
+	</style>
+</head>
+
+<body>
+<!-- TAB MENU HEADER onClick Links -->
+<div class="tab">
+	<button class="tablinks" onclick="openTab(event, 'Main')" id="defaultOpen"><b>Main</b></button>
+	<button class="tablinks" onclick="openTab(event, 'Calculator')"><b>Calculator</b></button>
+	<button class="tablinks" onclick="openTab(event, 'Trackpad')"><b>Trackpad</b></button>
+</div>
+
+<!-- 01 Main Tab: Content Start -->
+<div id="Main" class="tabcontent">
+		<!-- 01.1 Phone Directory -->
+		<form name="directory">
+			<fieldset type="text">
+				<legend type="text"><b>HP DIRECTORY</b></legend>
+				<label type="text" ><b>Search | PHONE NUMBERS</b></label>
+					<br> <input type="list" id="hp_maindept" name="l.hp_maindept" list="l.hp_maindept" placeholder="Search or Type the Department or Phone Number" /><br>
+				<label type="text"><b>Search | FAX / EMAILS</b></label>
+					<br><input type="list" id="hp_emails" name="l.hp_emails" list="l.hp_emails" placeholder="Search or Type the Department or Email & Fax #" /><br>
+				<label type="text"><b>Search | INTERNATIONAL TOLL  FREE</b></label>
+					<br><input type="list" id="hp_internum" name="l.hp_internum" list="l.hp_internum" placeholder="Search or Type name of Country" /><br>
+				<label type="text"><b>PARTNERS AND VENDORS</b></label>
+					<br><input type="list" id="hp_thirdparty" name="l.hp_thirdparty" list="l.hp_thirdparty" placeholder="Paypal, Fedex, Office, Troy, Etc." />
+				
+				<input type="reset" value="CLEAR SEARCH">
+			</fieldset>
+		</form>
+		<br>
+		<!-- 01.2 Trackpad Select Options -->
+		<select name="calls" type="showSelect" id="selectOptions" onchange="showDiv('div',this)" class="form-control" >
+			<option value="01"> Call No. - 01</option>
+  		  <option value="02"> Call No. - 02</option>
+   		 <option value="03"> Call No. - 03</option>
+   		 <option value="04"> Call No. - 04</option>
+ 		   <option value="05"> Call No. - 05</option>
+  		  <option value="06"> Call No. - 06</option>
+  		  <option value="07"> Call No. - 07</option>
+		    <option value="08"> Call No. - 08</option>
+   		 <option value="09"> Call No. - 09</option>
+  		  <option value="10"> Call No. - 10</option>
+			<option value="11"> Call No. - 11</option>
+			<option value="12"> Call No. - 12</option>
+   		 <option value="13"> Call No. - 13</option>
+   		 <option value="14"> Call No. - 14</option>
+			<option value="15"> Call No. - 15</option>
+			<option value="16"> Call No. - 16</option>
+  		  <option value="17"> Call No. - 17</option>
+		    <option value="18"> Call No. - 18</option>
+   		 <option value="19"> Call No. - 19</option>
+  		  <option value="20"> Call No. - 20</option>
+			<option value="21"> Call No. - 21</option>
+  		  <option value="22"> Call No. - 22</option>
+   		 <option value="03"> Call No. - 23</option>
+   		 <option value="24"> Call No. - 24</option>
+ 		   <option value="25"> Call No. - 25</option>
+  		  <option value="26"> Call No. - 26</option>
+  		  <option value="27"> Call No. - 27</option>
+		    <option value="28"> Call No. - 28</option>
+   		 <option value="29"> Call No. - 29</option>
+  		  <option value="30"> Call No. - 30</option>
+		</select>
+		<!-- 01.2.2 Trackpad onclick Select Show -->
+	<div id="div01" class="webpad" style="display:block;">
+		<fieldset type="text"><legend type="text">Call Received Notes: 01</legend>
+			<textarea rows="10" cols="55" id="track">
+CALL TYPE:
+ANI:
+TT:
+EMAIL:
+
+*ISSUE:
+*DETAILS:
+*ACTION TAKEN:
+*OUTCOME:
+*PROD#: </textarea> <br> <textarea rows="4" cols="55">
+PAID WITH:
+ORDER#:
+COUPON/FTC: NA
+SUB-TOTAL: $ </textarea>
+		</fieldset></div>
+	<div id="div02" class="webpad" style="display:none;">
+		<fieldset type="text"><legend type="text">Call Received Notes: 02</legend>
+			<textarea rows="10" cols="55" id="track">
+CALL TYPE:
+ANI:
+TT:
+EMAIL:
+
+*ISSUE:
+*DETAILS:
+*ACTION TAKEN:
+*OUTCOME:
+*PROD#: </textarea> <br> <textarea rows="4" cols="55">
+PAID WITH:
+ORDER#:
+COUPON/FTC: NA
+SUB-TOTAL: $ </textarea>
+		</fieldset></div>
+	<div id="div03" class="webpad" style="display:none;">
+		<fieldset type="text"><legend type="text">Call Received Notes: 03</legend>
+			<textarea rows="10" cols="55" id="track">
+CALL TYPE:
+ANI:
+TT:
+EMAIL:
+
+*ISSUE:
+*DETAILS:
+*ACTION TAKEN:
+*OUTCOME:
+*PROD#: </textarea> <br> <textarea rows="4" cols="55">
+PAID WITH:
+ORDER#:
+COUPON/FTC: NA
+SUB-TOTAL: $ </textarea>
+		</fieldset></div>
+	<div id="div04" class="webpad" style="display:none;">
+		<fieldset type="text"><legend type="text">Call Received Notes: 04</legend>
+			<textarea rows="10" cols="55" id="track">
+CALL TYPE:
+ANI:
+TT:
+EMAIL:
+
+*ISSUE:
+*DETAILS:
+*ACTION TAKEN:
+*OUTCOME:
+*PROD#: </textarea> <br> <textarea rows="4" cols="55">
+PAID WITH:
+ORDER#:
+COUPON/FTC: NA
+SUB-TOTAL: $ </textarea>
+		</fieldset></div>
+	<div id="div05" class="webpad" style="display:none;">
+		<fieldset type="text"><legend type="text">Call Received Notes: 05</legend>
+			<textarea rows="10" cols="55" id="track">
+CALL TYPE:
+ANI:
+TT:
+EMAIL:
+
+*ISSUE:
+*DETAILS:
+*ACTION TAKEN:
+*OUTCOME:
+*PROD#: </textarea> <br> <textarea rows="4" cols="55">
+PAID WITH:
+ORDER#:
+COUPON/FTC: NA
+SUB-TOTAL: $ </textarea>
+		</fieldset></div>
+	<div id="div06" class="webpad" style="display:none;">
+		<fieldset type="text"><legend type="text">Call Received Notes: 06</legend>
+			<textarea rows="10" cols="55" id="track">
+CALL TYPE:
+ANI:
+TT:
+EMAIL:
+
+*ISSUE:
+*DETAILS:
+*ACTION TAKEN:
+*OUTCOME:
+*PROD#: </textarea> <br> <textarea rows="4" cols="55">
+PAID WITH:
+ORDER#:
+COUPON/FTC: NA
+SUB-TOTAL: $ </textarea>
+		</fieldset></div>
+	<div id="div07" class="webpad" style="display:none;">
+		<fieldset type="text"><legend type="text">Call Received Notes: 07</legend>
+			<textarea rows="10" cols="55" id="track">
+CALL TYPE:
+ANI:
+TT:
+EMAIL:
+
+*ISSUE:
+*DETAILS:
+*ACTION TAKEN:
+*OUTCOME:
+*PROD#: </textarea> <br> <textarea rows="4" cols="55">
+PAID WITH:
+ORDER#:
+COUPON/FTC: NA
+SUB-TOTAL: $ </textarea>
+		</fieldset></div>
+	<div id="div08" class="webpad" style="display:none;">
+		<fieldset type="text"><legend type="text">Call Received Notes: 08</legend>
+			<textarea rows="10" cols="55" id="track">
+CALL TYPE:
+ANI:
+TT:
+EMAIL:
+
+*ISSUE:
+*DETAILS:
+*ACTION TAKEN:
+*OUTCOME:
+*PROD#: </textarea> <br> <textarea rows="4" cols="55">
+PAID WITH:
+ORDER#:
+COUPON/FTC: NA
+SUB-TOTAL: $ </textarea>
+		</fieldset></div>
+	<div id="div09" class="webpad" style="display:none;">
+		<fieldset type="text"><legend type="text">Call Received Notes: 09</legend>
+			<textarea rows="10" cols="55" id="track">
+CALL TYPE:
+ANI:
+TT:
+EMAIL:
+
+*ISSUE:
+*DETAILS:
+*ACTION TAKEN:
+*OUTCOME:
+*PROD#: </textarea> <br> <textarea rows="4" cols="55">
+PAID WITH:
+ORDER#:
+COUPON/FTC: NA
+SUB-TOTAL: $ </textarea>
+		</fieldset></div>
+	<div id="div10" class="webpad" style="display:none;">
+		<fieldset type="text"><legend type="text">Call Received Notes: 10</legend>
+			<textarea rows="10" cols="55" id="track">
+CALL TYPE:
+ANI:
+TT:
+EMAIL:
+
+*ISSUE:
+*DETAILS:
+*ACTION TAKEN:
+*OUTCOME:
+*PROD#: </textarea>
+<br><textarea rows="4" cols="55">
+PAID WITH:
+ORDER#:
+COUPON/FTC: NA
+SUB-TOTAL: $ </textarea>
+		</fieldset></div>
+	<div id="div11" class="webpad" style="display:none;">
+		<fieldset type="text"><legend type="text">Call Received Notes: 11</legend>
+			<textarea rows="10" cols="55" id="track">
+CALL TYPE:
+ANI:
+TT:
+EMAIL:
+
+*ISSUE:
+*DETAILS:
+*ACTION TAKEN:
+*OUTCOME:
+*PROD#: </textarea>
+<br><textarea rows="4" cols="55">
+PAID WITH:
+ORDER#:
+COUPON/FTC: NA
+SUB-TOTAL: $ </textarea>
+		</fieldset></div>
+	<div id="div12" class="webpad" style="display:none;">
+		<fieldset type="text"><legend type="text">Call Received Notes: 12</legend>
+			<textarea rows="10" cols="55" id="track">
+CALL TYPE:
+ANI:
+TT:
+EMAIL:
+
+*ISSUE:
+*DETAILS:
+*ACTION TAKEN:
+*OUTCOME:
+*PROD#: </textarea> <br> <textarea rows="4" cols="55">
+PAID WITH:
+ORDER#:
+COUPON/FTC: NA
+SUB-TOTAL: $ </textarea>
+		</fieldset></div>
+	<div id="div13" class="webpad" style="display:none;">
+		<fieldset type="text"><legend type="text">Call Received Notes: 13</legend>
+			<textarea rows="10" cols="55" id="track">
+CALL TYPE:
+ANI:
+TT:
+EMAIL:
+
+*ISSUE:
+*DETAILS:
+*ACTION TAKEN:
+*OUTCOME:
+*PROD#: </textarea> <br> <textarea rows="4" cols="55">
+PAID WITH:
+ORDER#:
+COUPON/FTC: NA
+SUB-TOTAL: $ </textarea>
+		</fieldset></div>
+	<div id="div14" class="webpad" style="display:none;">
+		<fieldset type="text"><legend type="text">Call Received Notes: 14</legend>
+			<textarea rows="10" cols="55" id="track">
+CALL TYPE:
+ANI:
+TT:
+EMAIL:
+
+*ISSUE:
+*DETAILS:
+*ACTION TAKEN:
+*OUTCOME:
+*PROD#: </textarea> <br> <textarea rows="4" cols="55">
+PAID WITH:
+ORDER#:
+COUPON/FTC: NA
+SUB-TOTAL: $ </textarea>
+		</fieldset></div>
+	<div id="div15" class="webpad" style="display:none;">
+		<fieldset type="text"><legend type="text">Call Received Notes: 15</legend>
+			<textarea rows="10" cols="55" id="track">
+CALL TYPE:
+ANI:
+TT:
+EMAIL:
+
+*ISSUE:
+*DETAILS:
+*ACTION TAKEN:
+*OUTCOME:
+*PROD#: </textarea> <br> <textarea rows="4" cols="55">
+PAID WITH:
+ORDER#:
+COUPON/FTC: NA
+SUB-TOTAL: $ </textarea>
+		</fieldset></div>
+	<div id="div16" class="webpad" style="display:none;">
+		<fieldset type="text"><legend type="text">Call Received Notes: 16</legend>
+			<textarea rows="10" cols="55" id="track">
+CALL TYPE:
+ANI:
+TT:
+EMAIL:
+
+*ISSUE:
+*DETAILS:
+*ACTION TAKEN:
+*OUTCOME:
+*PROD#: </textarea> <br> <textarea rows="4" cols="55">
+PAID WITH:
+ORDER#:
+COUPON/FTC: NA
+SUB-TOTAL: $ </textarea>
+		</fieldset></div>
+	<div id="div17" class="webpad" style="display:none;">
+		<fieldset type="text"><legend type="text">Call Received Notes: 17</legend>
+			<textarea rows="10" cols="55" id="track">
+CALL TYPE:
+ANI:
+TT:
+EMAIL:
+
+*ISSUE:
+*DETAILS:
+*ACTION TAKEN:
+*OUTCOME:
+*PROD#: </textarea> <br> <textarea rows="4" cols="55">
+PAID WITH:
+ORDER#:
+COUPON/FTC: NA
+SUB-TOTAL: $ </textarea>
+		</fieldset></div>
+	<div id="div18" class="webpad" style="display:none;">
+		<fieldset type="text"><legend type="text">Call Received Notes: 18</legend>
+			<textarea rows="10" cols="55" id="track">
+CALL TYPE:
+ANI:
+TT:
+EMAIL:
+
+*ISSUE:
+*DETAILS:
+*ACTION TAKEN:
+*OUTCOME:
+*PROD#: </textarea> <br> <textarea rows="4" cols="55">
+PAID WITH:
+ORDER#:
+COUPON/FTC: NA
+SUB-TOTAL: $ </textarea>
+		</fieldset></div>
+	<div id="div19" class="webpad" style="display:none;">
+		<fieldset type="text"><legend type="text">Call Received Notes: 19</legend>
+			<textarea rows="10" cols="55" id="track">
+CALL TYPE:
+ANI:
+TT:
+EMAIL:
+
+*ISSUE:
+*DETAILS:
+*ACTION TAKEN:
+*OUTCOME:
+*PROD#: </textarea> <br> <textarea rows="4" cols="55">
+PAID WITH:
+ORDER#:
+COUPON/FTC: NA
+SUB-TOTAL: $ </textarea>
+		</fieldset></div>
+	<div id="div20" class="webpad" style="display:none;">
+		<fieldset type="text"><legend type="text">Call Received Notes: 20</legend>
+			<textarea rows="10" cols="55" id="track">
+CALL TYPE:
+ANI:
+TT:
+EMAIL:
+
+*ISSUE:
+*DETAILS:
+*ACTION TAKEN:
+*OUTCOME:
+*PROD#: </textarea>
+<br><textarea rows="4" cols="55">
+PAID WITH:
+ORDER#:
+COUPON/FTC: NA
+SUB-TOTAL: $ </textarea>
+		</fieldset></div>
+	<div id="div21" class="webpad" style="display:none;">
+		<fieldset type="text"><legend type="text">Call Received Notes: 21</legend>
+			<textarea rows="10" cols="55" id="track">
+CALL TYPE:
+ANI:
+TT:
+EMAIL:
+
+*ISSUE:
+*DETAILS:
+*ACTION TAKEN:
+*OUTCOME:
+*PROD#: </textarea> <br> <textarea rows="4" cols="55">
+PAID WITH:
+ORDER#:
+COUPON/FTC: NA
+SUB-TOTAL: $ </textarea>
+		</fieldset></div>
+	<div id="div22" class="webpad" style="display:none;">
+		<fieldset type="text"><legend type="text">Call Received Notes: 22</legend>
+			<textarea rows="10" cols="55" id="track">
+CALL TYPE:
+ANI:
+TT:
+EMAIL:
+
+*ISSUE:
+*DETAILS:
+*ACTION TAKEN:
+*OUTCOME:
+*PROD#: </textarea> <br> <textarea rows="4" cols="55">
+PAID WITH:
+ORDER#:
+COUPON/FTC: NA
+SUB-TOTAL: $ </textarea>
+		</fieldset></div>
+	<div id="div23" class="webpad" style="display:none;">
+		<fieldset type="text"><legend type="text">Call Received Notes: 23</legend>
+			<textarea rows="10" cols="55" id="track">
+CALL TYPE:
+ANI:
+TT:
+EMAIL:
+
+*ISSUE:
+*DETAILS:
+*ACTION TAKEN:
+*OUTCOME:
+*PROD#: </textarea> <br> <textarea rows="4" cols="55">
+PAID WITH:
+ORDER#:
+COUPON/FTC: NA
+SUB-TOTAL: $ </textarea>
+		</fieldset></div>
+	<div id="div24" class="webpad" style="display:none;">
+		<fieldset type="text"><legend type="text">Call Received Notes: 24</legend>
+			<textarea rows="10" cols="55" id="track">
+CALL TYPE:
+ANI:
+TT:
+EMAIL:
+
+*ISSUE:
+*DETAILS:
+*ACTION TAKEN:
+*OUTCOME:
+*PROD#: </textarea> <br> <textarea rows="4" cols="55">
+PAID WITH:
+ORDER#:
+COUPON/FTC: NA
+SUB-TOTAL: $ </textarea>
+		</fieldset></div>
+	<div id="div25" class="webpad" style="display:none;">
+		<fieldset type="text"><legend type="text">Call Received Notes: 25</legend>
+			<textarea rows="10" cols="55" id="track">
+CALL TYPE:
+ANI:
+TT:
+EMAIL:
+
+*ISSUE:
+*DETAILS:
+*ACTION TAKEN:
+*OUTCOME:
+*PROD#: </textarea> <br> <textarea rows="4" cols="55">
+PAID WITH:
+ORDER#:
+COUPON/FTC: NA
+SUB-TOTAL: $ </textarea>
+		</fieldset></div>
+	<div id="div26" class="webpad" style="display:none;">
+		<fieldset type="text"><legend type="text">Call Received Notes: 26</legend>
+			<textarea rows="10" cols="55" id="track">
+CALL TYPE:
+ANI:
+TT:
+EMAIL:
+
+*ISSUE:
+*DETAILS:
+*ACTION TAKEN:
+*OUTCOME:
+*PROD#: </textarea> <br> <textarea rows="4" cols="55">
+PAID WITH:
+ORDER#:
+COUPON/FTC: NA
+SUB-TOTAL: $ </textarea>
+		</fieldset></div>
+	<div id="div27" class="webpad" style="display:none;">
+		<fieldset type="text"><legend type="text">Call Received Notes: 27</legend>
+			<textarea rows="10" cols="55" id="track">
+CALL TYPE:
+ANI:
+TT:
+EMAIL:
+
+*ISSUE:
+*DETAILS:
+*ACTION TAKEN:
+*OUTCOME:
+*PROD#: </textarea> <br> <textarea rows="4" cols="55">
+PAID WITH:
+ORDER#:
+COUPON/FTC: NA
+SUB-TOTAL: $ </textarea>
+		</fieldset></div>
+	<div id="div28" class="webpad" style="display:none;">
+		<fieldset type="text"><legend type="text">Call Received Notes: 28</legend>
+			<textarea rows="10" cols="55" id="track">
+CALL TYPE:
+ANI:
+TT:
+EMAIL:
+
+*ISSUE:
+*DETAILS:
+*ACTION TAKEN:
+*OUTCOME:
+*PROD#: </textarea> <br> <textarea rows="4" cols="55">
+PAID WITH:
+ORDER#:
+COUPON/FTC: NA
+SUB-TOTAL: $ </textarea>
+		</fieldset></div>
+	<div id="div29" class="webpad" style="display:none;">
+		<fieldset type="text"><legend type="text">Call Received Notes: 29</legend>
+			<textarea rows="10" cols="55" id="track">
+CALL TYPE:
+ANI:
+TT:
+EMAIL:
+
+*ISSUE:
+*DETAILS:
+*ACTION TAKEN:
+*OUTCOME:
+*PROD#: </textarea> <br> <textarea rows="4" cols="55">
+PAID WITH:
+ORDER#:
+COUPON/FTC: NA
+SUB-TOTAL: $ </textarea>
+		</fieldset></div>
+	<div id="div30" class="webpad" style="display:none;">
+		<fieldset type="text"><legend type="text">Call Received Notes: 30</legend>
+			<textarea rows="10" cols="55" id="track">
+CALL TYPE:
+ANI:
+TT:
+EMAIL:
+
+*ISSUE:
+*DETAILS:
+*ACTION TAKEN:
+*OUTCOME:
+*PROD#: </textarea>
+<br><textarea rows="4" cols="55">
+PAID WITH:
+ORDER#:
+COUPON/FTC: NA
+SUB-TOTAL: $ </textarea>
+		</fieldset></div>
+</div> <!-- 01 TAB Main: Content End-->
+
+<!-- 02 TAB Calculator: Content Start -->
+<div id="Calculator" class="tabcontent">
+	<form name=discal method="post">
+		<!-- 02.1 Calculate Discount -->
+		<fieldset type="text"> <legend type="text"><b>Calculate Discount</b></legend>
+		<table>
+			<tr> <td align="left" colSpan="2" width="40%"><b>ORIGINAL PRICE:</b></td>
+                <td align="right" colSpan="1"><input type="number" name="origPrice" placeholder="$ 0.00" width="30%"></td>
+                <td align="right" colSpan="1" width="30%">
+                    <select name="disApp" type="number" id="disApp">
+                        <option value="0">Discount %</option>
+                        <option value="00.99">01% Off</option>
+                        <option value="01.99">02% Off</option>
+                        <option value="02.99">03% Off</option>
+                        <option value="03.99">04% Off</option>
+                        <option value="04.99">05% Off</option>
+                        <option value="05.99">06% Off</option>
+                        <option value="06.99">07% Off</option>
+                        <option value="07.99">08% Off</option>
+                        <option value="08.99">09% Off</option>
+                        <option value="09.99">10% Off</option>
+                        <option value="11.99">12% Off</option>
+                        <option value="14.99">15% Off</option>
+                        <option value="19.99">20% Off</option>
+                        <option value="24.99">25% Off</option>
+                        <option value="29.99">30% Off</option>
+                        <option value="34.99">35% Off</option>
+                        <option value="39.99">40% Off</option>
+                        <option value="44.99">45% Off</option>
+                        <option value="49.99">50% Off</option>
+                      </select></td></tr>
+			<tr><td align="left" colSpan="2">
+                Discount Savings: <br>
+                Sub-Total: </td>
+                <td align="right" colSpan="1">&nbsp;<br>&nbsp;</td>
+                <td align="right" colSpan="1">
+                <input type="numb" placeholder="0" name="sav" readonly><br>
+                <input type="numb" placeholder="0" name="sub" readonly></td> </tr>
+		<tr><td align="right" colSpan="4"><input onclick=perc1() type="button" value="Calculate"></td></tr>
+		</table>
+	</fieldset> <!-- 02.1 End -->
+	<!-- 02.2 Percent Converter -->
+	<fieldset type="text">
+   	 <legend type="text"><b>Percent Converter</b></legend>
+		<table>
+			<tr><td align="middle" colSpan="1">Discount ($)</td>
+				<td align="middle" colSpan="1">Original Price</td>
+				<td align="middle" colSpan="1">Discount (%)</td>
+				<td align="middle" rowSpan="1"> </td></tr>
+            <tr><td align="middle" colSpan="1">
+                <input type="number" placeholder="$ 0.00" name="da"></td>
+                <td align="middle" colSpan="1">
+				<input type="number" placeholder="$ 0.00" name="op"></td>
+                <td align="middle" colSpan="1">
+				<input type="numb" placeholder="0%" name="dtp" readonly></td>
+			</tr>
+			<tr><td align="middle" colSpan="1">After Discount ($)</td>
+				<td align="middle" colSpan="1">Original Price</td>
+				<td align="middle" colSpan="1">Discount (%)</td>
+				<td align="middle" rowSpan="1"> </td></tr>
+            <tr><td align="middle" colSpan="1">
+                <input type="number" placeholder="$ 0.00" name="daa"></td>
+                <td align="middle" colSpan="1">
+				<input type="number" placeholder="$ 0.00" name="opp"></td>
+                <td align="middle" colSpan="1">
+				<input type="numb" placeholder="0%" name="dtpp" readonly></td>
+			</tr>
+			<tr><td align="right" colSpan="4"><input onclick=perc2() type="button" value="Convert"></td></tr>
+		</table>
+	</fieldset> <!-- 02.2 End -->
+	<br>
+		<input type="reset" value="Clear">
+	</form>
+</div> <!-- 02 TAB Calculator: Content End -->
+
+<!-- 03 TAB Trackpad: Content Start -->
+<div id="Trackpad" class="tabcontent">
+  <form name=trackpad>
+	<fieldset type="text">
+		<legend type="text"><b>TRACK PAD</b></legend>
+        <textarea rows="5" cols="55" id="track">
+#01 - 
+#02 - 
+#03 - 
+#04 - 
+#05 - </textarea>
+		<br>
+		<textarea rows="5" cols="55" id="track">
+#06 - 
+#07 - 
+#08 - 
+#09 - 
+#10 - </textarea><br>
+      </fieldset>
+	</form>
+</div> <!-- 03 TAB Trackpad: Content End -->
+
+<!-- ***FOOTER*** --> <br>
+<div class="footer">� 2016 - 2017. All Rights Reserved. WebTool 2.1 by Benz Rodrigo.
+<br>Zoom: benzrodrigo@gmail.com</div>
+
+<!-- ***SCRIPTS*** -->
+	<!-- TAB Menu onClick show Content-->
+<script>
+	function openTab(evt, cityName) {
+		var i, tabcontent, tablinks;
+		tabcontent = document.getElementsByClassName("tabcontent");
+		for (i = 0; i < tabcontent.length; i++) {
+			tabcontent[i].style.display = "none";
+			}
+		tablinks = document.getElementsByClassName("tablinks");
+		for (i = 0; i < tablinks.length; i++) {
+        tablinks[i].className = tablinks[i].className.replace(" active", "");
+        }
+		document.getElementById(cityName).style.display = "block";
+		evt.currentTarget.className += " active";
+		}
+		document.getElementById("defaultOpen").click();
+</script>
+
+   <!-- 02 TAB Calculator: Compute Function -->
+<Script language=JavaScript>
+	function perc1() {
+		origPrice = document.discal.origPrice.value/100;
+		disApp = origPrice*document.discal.disApp.value;
+		document.discal.sub.value = document.discal.origPrice.value-disApp
+		document.discal.sav.value = disApp
+		}
+	function perc2() {
+ 		a = document.discal.da.value;
+		b = document.discal.op.value;
+		da = a/b;
+ 		op = da*100;
+ 		aa = document.discal.daa.value;
+ 		bb = document.discal.opp.value;
+ 		daa = bb-aa;
+ 		opp = daa/bb;
+ 		opp = opp*100;
+		document.discal.dtpp.value = opp
+	 }
+  </script>
+ 
+	<!-- 01 TAB Main: Toggle Trackpad Select Show -->
+<script>
+	function showDiv(prefix,chooser) {
+		for(var i=0;i<chooser.options.length;i++) {
+			var div = document.getElementById(prefix+chooser.options[i].value);
+			div.style.display = 'none';
+			}
+			var selectedOption = (chooser.options[chooser.selectedIndex].value);
+				if(selectedOption == "01") { displayDiv(prefix,"01"); }
+				if(selectedOption == "02") { displayDiv(prefix,"02"); }
+				if(selectedOption == "03") { displayDiv(prefix,"03"); }
+				if(selectedOption == "04") { displayDiv(prefix,"04"); }
+				if(selectedOption == "05") { displayDiv(prefix,"05"); }
+				if(selectedOption == "06") { displayDiv(prefix,"06"); }
+				if(selectedOption == "07") { displayDiv(prefix,"07"); }
+				if(selectedOption == "08") { displayDiv(prefix,"08"); }
+				if(selectedOption == "09") { displayDiv(prefix,"09"); }
+				if(selectedOption == "10") { displayDiv(prefix,"10"); }
+				if(selectedOption == "11") { displayDiv(prefix,"11"); }
+				if(selectedOption == "12") { displayDiv(prefix,"12"); }
+				if(selectedOption == "13") { displayDiv(prefix,"13"); }
+				if(selectedOption == "14") { displayDiv(prefix,"14"); }
+				if(selectedOption == "15") { displayDiv(prefix,"15"); }
+				if(selectedOption == "16") { displayDiv(prefix,"16"); }
+				if(selectedOption == "17") { displayDiv(prefix,"17"); }
+				if(selectedOption == "18") { displayDiv(prefix,"18"); }
+				if(selectedOption == "19") { displayDiv(prefix,"19"); }
+				if(selectedOption == "20") { displayDiv(prefix,"20"); }
+				if(selectedOption == "21") { displayDiv(prefix,"21"); }
+				if(selectedOption == "22") { displayDiv(prefix,"22"); }
+				if(selectedOption == "23") { displayDiv(prefix,"23"); }
+				if(selectedOption == "24") { displayDiv(prefix,"24"); }
+				if(selectedOption == "25") { displayDiv(prefix,"25"); }
+				if(selectedOption == "26") { displayDiv(prefix,"26"); }
+				if(selectedOption == "27") { displayDiv(prefix,"27"); }
+				if(selectedOption == "28") { displayDiv(prefix,"28"); }
+				if(selectedOption == "29") { displayDiv(prefix,"29"); }
+				if(selectedOption == "30") { displayDiv(prefix,"30"); }
+				}
+	function displayDiv(prefix,suffix) {
+		var div = document.getElementById(prefix+suffix);
+		div.style.display = 'block';
+		}
+</script>
+
+<!-- 01 TAB Main: List Values -->
+	<!-- Phone Numbers --> <datalist id="l.hp_maindept">
+      <option label="TIER 1 (M-F: 8AM-8PM EST)" value="+18882278454">
+      <option label="TIER 2 | RESOLUTIONS" value="57180">
+      <option label="TIER 2 | RESOLUTIONS" value="+18882278451">
+      <option label="SST (M-F | 9AM-9M EST)" value="+18662460504">
+      <option label="INSTANT INK *OPT2 (M-F: 9AM-9PM EST, SAT-SUN: 9AM-6PM EST)" value="+18557852777">
+      <option label="EPRINT / HP CONNECTED *OPT1" value="+18557852777">
+      <option label="SALES - HOME STORE (M-S: 8AM-2AM EST)" value="+18889994747">
+      <option label="HP INC.-BOISE" value="+18006795530">
+      <option label="BOISE" value="2083965263">
+      <option label="BOISE *Ext 11" value="+18889994747">
+      <option label="SMB (M-F: 8AM-8PM EST)" value="+18008889909">
+      <option label="SMB BOISE SERVER TEAM *OPT2-1-5" value="+18008885858">
+      <option label="LVO (LARGE VOLUME ORDERS)" value="+18662887366">
+      <option label="BUSINESS CSR" value="+18665283733">
+      <option label="BML PREFERED ACCOUNT" value="+18886564580">
+      <option label="HSBC/E-FINANCE" value="+18003658106">
+      <option label="CAREPACK REGISTRATION (ACR: 153)" value="+18004076210">
+      <option label="CAREPACK OUT OF WARRANTY *Ext2" value="+18662341377">
+      <option label="CAREPACK INSTALLATION" value="+18884470169">
+      <option label="CAREPACK POST WARRANTIES" value="+18003345144">
+      <option label="CAREPACK SUPPORT CONSUMER" value="+18774399509">
+      <option label="CAREPACK SUPPORT COMMERCIAL" value="+18448467137">
+      <option label="CAREPACK PREMIUM (ACR: 440)" value="+18662115207">
+      <option label="HPENTERPRISE" value="+18554725233">
+      <option label="HPENTERPRISE CAREPACK (OUT-OF-WARRANTY)" value="+18448063425">
+      <option label="HPENTERPRISE CAREPACK (UNDER WARRANTY)" value="+18006333600">
+      <option label="TECH SUPPORT-CONS (7D, 6AM-10PM CST)" value="+18886983762">
+      <option label="TECH SUPPORT-BUS (24x7)" value="+18003345144">
+      <option label="SMART FRIEND (CSR)" value="+18667560309">
+      <option label="SMART FRIEND (SALES)" value="+18448141800">
+      <option label="SMART FRIEND (TECH-Ext 11)" value="+18662115207">
+      <option label="PRODUCTS SVC AND RPR" value="+18006402809">
+      <option label="SPANISH SALES" value="+18007996947">
+      <option label="SPANISH CSR" value="+18885058076">
+      <option label="SPANISH TECH" value="+18007416684">
+      <option label="RECOVERY DISK" value="+18884734757">
+      <option label="RECOVERY DISK/DRIVER SUPPORT" value="+18008412761">
+      <option label="AUTHENTICATION SUPPORT" value="+18006333600">
+      <option label="CHROMEBOOK SUPPORT" value="+18558124766">
+      <option label="COMPUTRACE LOJACK" value="+18004565225">
+      <option label="POWER CHORD REPLACEMENT" value="+18772196676">
+      <option label="HP CALCULATOR SUPPORT" value="+18445038856">
+      <option label="TRAID IN CSR (M-F / 8AM-8PM EST)" value="+18885933835">
+      <option label="TRAID IN QUOTE REQUEST/STATUS" value="+18664822899">
+      <option label="REFURBISHED DEP (M-F: 8AM-6PM CST)" value="+18883855408">
+      <option label="GIFTCARD SUPPORT" value="+18774233135">
+      <option label="DISABILITY ASSISTANCE (ACR: 268)" value="+18882595707">
+      <option label="K-12 EDUCATION SECTOR - SALES TEAM" value="+18008883224">
+      <option label="HIGHER EDUCATION SECTOR - SALES TEAM" value="+18774804433">
+      <option label="FEDERAL GOV SECTOR - SALES TEAM" value="+18007275472">
+      <option label="STATE & LOCAL GOV SECTOR - SALES TEAM" value="+18882024682">
+      <option label="RESELLERS" value="+18005449976">
+      <option label="RESELLERS INFO" value="+188862969144">
+      <option label="HP CORPORATE ENTERPRISE (867*#)" value="+18002036748">
+      <option label="CORPORATE OFFICE" value="6508571501">
+      <option label="CORPORATE OFFICE (Fax)" value="6508575518">
+      <option label="HUMAN RESOURCES" value="+18008903100">
+      <option label="PR MEDIA RELATIONS" value="+18662667272">
+      <option label="RECYCLING" value="+18884851849">
+      <option label="RECYCLING/PLANET PARTNER" value="+18003402445">
+      <option label="REBATE CENTER" value="+18883855410">
+      <option label="DAAS - CONCIERGE" value="+18665380946">
+      <option label="PARTS (M-F | 9AM-9PM CST)" value="EMAIL ONLY">
+      <option label="TAX EXEMPT / DONATIONS" value="EMAIL ONLY">
+		</option>
+	</datalist>
+	<!-- Emails --><datalist id="l.hp_emails">
+      <option label="SALES / HOME STORE " value="myhpsales@hp.com">
+      <option label="PARTS STORE (SALES)" value="hpparts.sales.ams@hp.com">
+      <option label="PARTS STORE (CSR)" value="hpparts.rma.ams@hp.com">
+      <option label="LVO" value="hplvo@hp.com">
+      <option label="TAX EXEMPT" value="hhotaxexempt@hp.com">
+      <option label="CAREPACK REGISTRATION (CONSUMER)" value="hp_carepack_registration@hp.com">
+      <option label="CAREPACK REGISTRATION (COMMERCIAL)" value="srg@hp.com">
+      <option label="PHILANTHROPY REQUEST" value="philanthropy_ed@hp.com">
+      <option label="MVAR RESELLER" value="mvar@hp.com">
+     <option label="TRAID IN & SAVE" value="hptradesave@marketvelocity.com">
+     <option label="TRAID IN & SAVE (FAX)" value="770-217-4102">
+      <option label="RESOLUTIONS DEPT (FAX)" value="866-275-0879">
+          </option>
+       </datalist>
+	<!-- International Numbers --> <datalist id="l.hp_internum">
+      <option label="CANADA-SALES" value="+18772314351">
+      <option label="CANADA-PRE-SALES" value="+18003873867">
+      <option label="GUADALAJARA" value="+18008880262">
+      <option label="MEXICO" value="+18005019800">
+      <option label="PUERTO RICO" value="+18772320589">
+      <option label="CARIBBEAN COUNTRIES" value="+18007112884">
+		</option>
+    </datalist>
+	<!-- Third Partys --> <datalist id="l.hp_thirdparty">
+      <option label="PAYPAL" value="1888 221 1161">
+      <option label="PAYPAL CREDIT (BILL ME LATER)" value="1866 528 3733">
+      <option label="TROY GROUP (Online Sales)" value="1866 352 8769">
+      <option label="TROY GROUP (Direct Sales)" value="1866 453 9390">
+      <option label="FEDEX" value="1800 463 3339">
+      <option label="USPS" value="1800 275 8777">
+      <option label="MS OFFICE SUPPORT" value="1800 642 7675">
+      <option label="MS OFFICE 365 SUPPORT" value="1800 865 9408">
+      <option label="MCAFEE-HOME/OFFICE SUPPORT" value="1866 622 3911">
+      <option label="MCAFEE-HOME/OFFICE SUPPORT" value="1800 937 2237">
+      <option label="AMAZON" value="1888 280 4331">
+      <option label="BEST BUY" value="1800 237 8289">
+      <option label="COSTCO WHOLESALE" value="1800 774 2678">
+      <option label="EBAY" value="1866 540 3229">
+      <option label="FRYS ELECTRONICS" value="1408 350 1484">
+      <option label="MICRO CENTER" value="1614 850 3675">
+      <option label="OFFICE DEPOT / OFFICE MAX" value="1800 463 3768">
+      <option label="SAM'S CLUB" value="1800 440 0680">
+      <option label="STAPLES" value="1800 333 3330">
+      <option label="TARGET" value="1800 440 0680">
+      <option label="WALMART" value="1800 925 6278">
+		</option>
+    </datalist>
+</body>
+</html>
