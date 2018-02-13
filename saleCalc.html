@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<HTML lang="en">
+	
+<HEAD>
+	<TITLE>Sales Tax Calculator</TITLE>
+
+	<style type="text/css">
+	body {
+		font-family: Arial, Helvetica, sans-serif;
+		background: #333366;
+		}
+	#staxContainer {
+		font-size:12px;
+		max-width:400px;
+		padding: 5px 5px;
+		background: white;
+		border: thin solid black;
+		}
+	#staxTable {
+		border-style: solid; border-color: black;
+		border-width: 2px; border-radius: 3px;
+		background-color: silver;
+		}
+	#labelInfo {
+		font-size:11px;
+		background-color:#0085cc; color:#ffffff;
+		border:0px; border-radius:2px;
+		padding:2px 5px;
+		}
+	#resetBtn {
+		font-size:12px;
+		border-style: solid; border-color: #009806;
+		border-width: 2px; border-radius: 3px;
+		}
+	#subtotalBtn {
+		font-size:12px;
+		border-style: solid; border-color: black;
+		border-width: 2px; border-radius: 3px;
+		}
+	#getTotalBtn {
+		font-size:12px;
+		border-style: solid; border-color: black;
+		border-width: 2px; border-radius: 3px;
+		}
+	</style>
+</HEAD>
+
+<body>
+	<div name="staxContainer" id="staxContainer" class="form">
+		<h3>Sales Tax Calculator</h3>
+		<form name="myCalc" id="myCalc">
+		<table name="staxTable" id="staxTable">
+			<tr><th><label>Amount:</label></th>
+			<th scope="row"> <div align="left"><label><span>$</span></label>
+			<input name="price" type="number" id="price" size="10">
+				</div></th>
+				
+			<tr><th><label id="labelInfo">*</label></th>
+			<th scope="row"><div align="left"><label id="labelInfo"><span>Calculate Subtotal after Discount if any</span></label>
+				</div></th>
+			<tr><th><label>DISCOUNT</label></th>
+			<th scope="row"> <div align="left"><label><span>%</span></label>
+			<input name="discount" type="number" id="discount">
+				</div></th>
+				
+			<tr><th><label>Savings:</label></th>
+			<th scope="row"> <div align="left"><label><span>$</span></label>
+			<input name="adjustment" type="number" id="adjustment" size="10" disabled="disabled">
+				</div></th>
+				
+			<tr><th><label>Sub-Total:</label></th>
+			<th scope="row"> <div align="left"><label><span>$</span></label>
+			<input name="subtotal" type="number" id="subtotal" onFocus="this.form.elements[1].focus()" size="10" disabled="disabled">
+			<input name="subtotalBtn" onClick="subTotal();" type="button" id="subtotalBtn" value="Calculate">
+				</div></th>
+				
+			<tr><th><label>TAX</label></th>
+			<th scope="row"> <div align="left">&nbsp;&nbsp;<label><span>State</span></label>
+			<select name="stateTax" type="text" id="stateTax" size="10">
+				<option value="1.76">AK</option>
+				<option value="9.01">AL</option>
+				<option value="9.30">AR</option>
+				<option value="8.25">AZ</option>
+				<option value="8.25">CA</option>
+				 <option value="7.50">CO</option>
+				<option value="6.35">CT</option>
+				<option value="5.75">DC</option>
+				<option value="0.0">DE</option>
+				<option value="6.80">FL</option>
+				<option value="7.00">GA</option>
+				<option value="4.35">HI</option>
+				<option value="6.80">IA</option>
+				<option value="6.03">ID</option>
+				<option value="8.64">IL</option>
+				<option value="7.00">IN</option>
+				<option value="8.62">KS</option>
+				<option value="6.00">KY</option>
+				<option value="9.98">LA</option>
+				 <option value="6.25">MA</option>
+				 <option value="6.00">MD</option>
+				<option value="5.50">ME</option>
+				<option value="6.00">MI</option>
+				<option value="7.30">MN</option>
+				<option value="7.889">MO</option>
+				 <option value="7.07">MS</option>
+				<option value="0.00">MT</option>
+				<option value="6.90">NC</option>
+				<option value="6.78">ND</option>
+				<option value="6.89">NE</option>
+				 <option value="0.00">NH</option>
+				<option value="6.85">NJ</option>
+				<option value="7.55">NM</option>
+				<option value="7.98">NV</option>
+				 <option value="8.49">NY</option>
+				<option value="7.14">OH</option>
+				<option value="8.86">OK</option>
+				<option value="0.00">OR</option>
+				<option value="6.34">PA</option>
+				<option value="7.00">RI</option>
+				<option value="7.22">SC</option>
+				<option value="6.39">SD</option>
+				<option value="9.46">TN</option>
+				<option value="8.19">TX</option>
+				<option value="6.76">UT</option>
+				<option value="5.63">VA</option>
+				<option value="6.18">VT</option>
+				 <option value="8.92">WA</option>
+				<option value="5.42">WI</option>
+				<option value="6.29">WV</option>
+				<option value="5.40">WY</option></select>&nbsp;
+			<label>Zip:</label>&nbsp;<input name="zip" type="text" id="zip" size="10">
+				</div></th>
+				
+			<tr><th><label>Sales Tax:</label></th>
+			<th scope="row"> <div align="left">&nbsp;&nbsp;<label><span>$</span></label>
+			<input name="salesTax" type="number" id="salesTax" size="10" disabled="disabled">
+				</div></th>
+				
+			<tr><th><label>TOTAL:</label></th>
+			<th scope="row"><div align="left">&nbsp;&nbsp;<label><span>$</span></label>
+			<input name="total" type="number" id="total" size="10" disabled="disabled">
+				</div></th>
+				
+			<tr><th scope="row" colSpan="2"><div align="center">
+			<input name="resetBtn" type="reset" id="resetBtn" value="Reset">&nbsp;&nbsp;
+			<input name="getTotalBtn" type="button" id="getTotalBtn" value="Calculate Order">
+				</div></th>
+		</table>
+		</form>
+	</div>
+	
+    </body>
+
+<script>
+	function subTotal() {
+		var price = document.myCalc.price.value;
+		var discount = document.myCalc.discount.value;
+			percent = discount / 100;
+			document.myCalc.adjustment.value = price * percent;
+			prodTotal = price - document.myCalc.adjustment.value;
+			document.myCalc.subtotal.value = prodTotal;
+			return prodTotal;
+			}
+		var $ = function (id) {
+			return document.getElementById(id);
+			}
+			
+		var calculate_click = function () {
+			var sTotal = subTotal();
+			var prodPrice = parseFloat($("price").value);
+			var taxRate = parseFloat($("stateTax").value);
+			
+			$("salesTax").value = "";
+			$("total").value = "";
+			
+				if (isNaN(prodPrice) || prodPrice < 0) {
+					alert("No Price Amount Entered!");
+					}
+				else if (isNaN(taxRate) || taxRate < 0) {
+					alert("No US State Selected!");
+					}
+				else { var salesTax = sTotal * (taxRate / 100);
+					salesTax = parseFloat(salesTax.toFixed(2));
+					var total = sTotal + salesTax;
+					$("salesTax").value = salesTax;
+					$("total").value = total.toFixed(2);
+					}
+				}
+				$("getTotalBtn").onclick = function(){calculate_click();};
+				$("price").focus();
+	</script>
+	
+</html>
